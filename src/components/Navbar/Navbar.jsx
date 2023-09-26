@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../../public/Logo.png";
 
 const Navbar = () => {
     const links = <>
@@ -9,7 +8,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 border">
+        <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -20,7 +19,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="text-xl cursor-pointer"><img src={logo} alt="logo" className="w-40" /></a>
+                    <a className="text-xl cursor-pointer"><img src="https://i.ibb.co/3NCBWdw/Logo.png" alt="logo" className="w-40" /></a>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-lg">

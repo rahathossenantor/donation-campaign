@@ -9,7 +9,7 @@ import './index.css'
 import NotFoundPage from './components/NotFoundPage/NotFoundPage.jsx'
 import Donations from './components/Donations/Donations.jsx'
 import Statistics from './components/Statistics/Statistics.jsx'
-import Banner from './components/Banner/Banner.jsx'
+import Home from './components/Home/Home.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Banner></Banner>
+        element: <Home></Home>
       },
       {
         path: '/donations',
