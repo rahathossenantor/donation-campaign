@@ -6,11 +6,30 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import './index.css'
+import NotFoundPage from './components/NotFoundPage/NotFoundPage.jsx'
+import Donations from './components/Donations/Donations.jsx'
+import Statistics from './components/Statistics/Statistics.jsx'
+import Banner from './components/Banner/Banner.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App/>,
+    errorElement: <NotFoundPage></NotFoundPage>,
+    children: [
+      {
+        path: '/',
+        element: <Banner></Banner>
+      },
+      {
+        path: '/donations',
+        element: <Donations></Donations>
+      },
+      {
+        path: '/statistics',
+        element: <Statistics></Statistics>
+      }
+    ]
   },
 ]);
 
