@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveItemToLocalStorage } from "../../utilities/localStorage";
 
 const DonationDetails = () => {
     const data = JSON.parse(useLoaderData());
@@ -7,13 +8,17 @@ const DonationDetails = () => {
     const card = data.find(c => parseInt(c.id) === parseInt(id));
     const {title, description, titleColor, image, amount} = card;
 
+    const addAsDonated = (card) => {
+        saveItemToLocalStorage(card);
+    }
+
     return (
         <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5">
             <div className="mb-10">
                 <div className="w-full relative xl:my-10 md:my-5 my-5">
                     <img src={image} alt="cover-image" className="inline-block w-full rounded-xl" />
                     <div className="bg-[#00000080] absolute left-0 bottom-0 w-full rounded-b-xl p-5">
-                        <button style={{backgroundColor: titleColor}} className="btn text-white normal-case border-none">Donate ${amount}</button>
+                        <button onClick={() => addAsDonated(card)} style={{backgroundColor: titleColor}} className="btn text-white normal-case border-none">Donate ${amount}</button>
                     </div>
                 </div>
                 <div>

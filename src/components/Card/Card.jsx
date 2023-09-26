@@ -5,7 +5,7 @@ const Card = ({ card }) => {
     const {id, category, categoryBgColor, categoryButtonBgColor, image, title, titleColor } = card;
 
     return (
-        <Link to={`/donation/${id}`}>
+        <Link to={`/donation-details/${id}`}>
             <div className="rounded-lg shadow-xl cursor-pointer">
                 <figure className="w-full">
                     <div className="rounded-md flex items-center justify-center">
