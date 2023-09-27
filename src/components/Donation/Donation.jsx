@@ -27,15 +27,21 @@ const Donation = () => {
         </div>
     </>
 
+    const noDonationsYet = <>
+        <div className="text-center py-20">
+            <img src="https://salemcommon.org/wp-content/uploads/2019/03/donate.png" alt="donation" className="w-20 inline-block" />
+            <h2 className="text-3xl">No donations yet!</h2>
+        </div>
+    </>
+
     return (
         <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5">
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-5 my-10">
-                {
-                    donations.slice(0, dataLength).map((donation) => <DonatedCard key={donation.id} donation={donation}></DonatedCard>)
-                }
+                {donations.length !== 0 && donations.slice(0, dataLength).map((donation) => <DonatedCard key={donation.id} donation={donation}></DonatedCard>)}
             </div>
+            {donations.length === 0 && noDonationsYet}
             {
-                donations.length > 4 ? showAllToggleBtn : ""
+                donations.length > 4 && showAllToggleBtn
             }
         </div>
     );

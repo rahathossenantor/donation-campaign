@@ -29,5 +29,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// https://github.com/ProgrammingHero1/donation-campaign/blob/main/requirements.pdf
