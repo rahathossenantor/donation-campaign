@@ -13,13 +13,19 @@ const Donation = () => {
     }, []);
 
     const handleIsShowAll = () => {
-        if (dataLength === 4) {            
+        if (dataLength === 4) {
             setDataLength(donations.length);
         } else {
             setDataLength(4);
         }
         setIsShowAll(!isShowAll);
     }
+
+    const showAllToggleBtn = <>
+        <div className="text-center mb-10">
+            <button onClick={handleIsShowAll} className="btn bg-[#009444] hover:bg-[#009444] text-white px-7 normal-case">{!isShowAll ? "See All" : "See Less"}</button>
+        </div>
+    </>
 
     return (
         <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5">
@@ -28,9 +34,9 @@ const Donation = () => {
                     donations.slice(0, dataLength).map((donation) => <DonatedCard key={donation.id} donation={donation}></DonatedCard>)
                 }
             </div>
-            <div className="text-center mb-10">
-                <button onClick={handleIsShowAll} className="btn bg-[#009444] hover:bg-[#009444] text-white px-7 normal-case">{!isShowAll ? "See All" : "See Less"}</button>
-            </div>
+            {
+                donations.length > 4 ? showAllToggleBtn : ""
+            }
         </div>
     );
 };
