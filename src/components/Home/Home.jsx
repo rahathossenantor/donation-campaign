@@ -19,8 +19,10 @@ const Home = () => {
         if (category !== "") {
             const sortedCards = carbonCards.filter(c => c.category.toLowerCase().startsWith(category.toLowerCase()));
             setCards(sortedCards);
+        } else {
+            setCards([]);
         }
-    }
+    };
 
     return (
         <>
