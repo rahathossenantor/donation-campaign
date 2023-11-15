@@ -14,5 +14,3 @@ const NotFoundPage = () => {
 };
 
 export default NotFoundPage;
-
-// https://github.com/ProgrammingHero1/donation-campaign/blob/main/requirements.pdf
